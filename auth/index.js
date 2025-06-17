@@ -43,10 +43,10 @@ app.post("/login", (req, res) => {
 
   const token = jwt.sign({ userId: user.userId }, SECRET_KEY, {
     expiresIn: "1h",
+    issuer: "my-jwt-key",
   });
   res.json({ token });
 });
-
 
 app.get("/verify", authenticateToken, (req, res) => {
   const userBase64 = base64Encode(req.user);

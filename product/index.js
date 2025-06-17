@@ -1,11 +1,9 @@
 const express = require("express");
 const app = express();
-const base64Decode = (str) =>
-  JSON.parse(Buffer.from(str, "base64").toString("utf-8"));
+const jwt = require("jsonwebtoken");
 
-app.get("/products", (req, res) => {
-  const userHeader = req.headers["x-authenticated-user"];
-  const user = base64Decode(userHeader);
+app.get("/products", getUser, (req, res) => {
+  const user = req.user;
 
   res.json({
     message: "Product list",
@@ -22,5 +20,14 @@ app.use((req, res, next) => {
     message: "Page not found in product service",
   });
 });
+
+function getUser(req, res, next) {
+  const token = req.header("Authorization")?.split(" ")[1];
+  if (!token) return res.status(401).json({ message: "Access denied" });
+
+  const decoded = jwt.decode(token);
+  req.user = { userId: decoded.userId };
+  next();
+}
 
 app.listen(4000, () => console.log("Product service running on port 4000"));
