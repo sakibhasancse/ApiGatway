@@ -1,4 +1,4 @@
-﻿# api gateway with nginx
+﻿# Api gateway with nginx
 ![image](https://github.com/user-attachments/assets/e137f947-229a-4b18-89f4-c1259372aff8)
 
 ### 1️⃣ Try on your device.
@@ -43,3 +43,4 @@ curl --location --request GET 'http://localhost:8080/product/products' \
 ```sh
 docker-compose down
 ```
+Kong Implementation: https://github.com/sakibhasancse/ApiGatway/tree/kong-implementation
