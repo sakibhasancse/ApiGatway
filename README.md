@@ -1,6 +1,10 @@
 ﻿# Api gateway with nginx
 ![image](https://github.com/user-attachments/assets/e137f947-229a-4b18-89f4-c1259372aff8)
 
+## Overview
+
+This API gateway uses Nginex to handle authentication and route requests to backend services. When a user makes a request, the gateway authenticates the user and, upon successful authentication, forwards the request to the appropriate service. This setup centralizes authentication and simplifies service management.
+
 ### 1️⃣ Try on your device.
 
 ### 2️⃣ Run the Services
