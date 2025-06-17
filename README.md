@@ -1,6 +1,10 @@
 ﻿# Api gateway with kong
 ![image](https://github.com/user-attachments/assets/5dde38f3-eee1-45ec-aca3-4fb054f45f5e)
 
+## Overview
+
+This API gateway uses Kong to handle authentication and route requests to backend services. When a user makes a request, the gateway authenticates the user and, upon successful authentication, forwards the request to the appropriate service. This setup centralizes authentication and simplifies service management.
+
 ### 1️⃣ Try on your device.
 
 ### 2️⃣ Run the Services
